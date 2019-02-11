@@ -19,9 +19,11 @@ class MainActivity : AppCompatActivity() {
 
     fun calcularOperacion(view: View){
         var n : Double = entrada.getText().toString().toDouble()
+        Salida = findViewById(R.id.salida)
         Salida.append(""+n +"^2 = ")
-        var i : Intent = Intent(this, ServicioOperacion::class.java)
+        var i : Intent = Intent(this, IntentServiceOperacion::class.java)
         i.putExtra("numero", n)
         startService(i)
     }
 }
+
